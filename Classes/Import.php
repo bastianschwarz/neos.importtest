@@ -97,7 +97,7 @@ final class Import {
     $node->setProperty('id', $id);
     $node->setProperty('entityType', $entityType);
     $node->setProperty('ident', $ident);
-    $node->setProperty('uriPathSegment', $this->nodeUriPathSegmentGenerator->generateUriPathSegment($node));
+    $node->setProperty('uriPathSegment', $this->nodeUriPathSegmentGenerator->generateUriPathSegment($node, $item['permaLink'][$nodeLanguage]));
     $node->setProperty('originalItem', $item);
   }
 
