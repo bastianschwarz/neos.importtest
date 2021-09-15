@@ -1,0 +1,30 @@
+{
+  "name": "infomax/neos.imxplatform.import",
+  "description": "Demo package to get a feeling for how a imx.Platform import into NEOS could look like",
+  "type": "neos-package",
+  "require": {
+    "neos/neos": "^7.1"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest"
+  },
+  "license": "proprietary",
+  "autoload": {
+    "psr-4": {
+      "de\\imxnet\\neos\\imxplatform\\import\\": "Classes/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "de\\imxnet\\neos\\imxplatform\\import\\test\\": "Tests/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "neos": {
+      "package-key": "Imx.ImxPlatformImport"
+    }
+  }
+}

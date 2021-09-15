@@ -1,0 +1,27 @@
+# This is a custom document node type which has been auto-generated for your site package
+# by Neos. You can customize this to your needs.
+'Imx.ImxPlatformImport:Document.PlatformContent':
+  superTypes:
+    'Neos.Neos:Document': true
+  ui:
+    icon: 'icon-fort-awesome'
+    label: i18n
+  properties:
+    id:
+      type: string
+      validation:
+        Neos.Neos/Validation/NotEmptyValidator:
+    entityType:
+      type: string
+      validation:
+        Neos.Neos/Validation/NotEmptyValidator:
+    ident:
+      type: string
+      defaultValue: "${q(node).property('objectType')}_${q(node).property('id')}"
+      validation:
+        Neos.Neos/Validation/NotEmptyValidator:
+    permalinks:
+      type: array
+      validation:
+        Neos.Neos/Validation/NotEmptyValidator:
+

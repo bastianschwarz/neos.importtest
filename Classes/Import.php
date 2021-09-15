@@ -1,5 +1,29 @@
 <?php declare(strict_types=1);
+/**
+ * LICENSE
+ *
+ * This software and its source code is protected by copyright law (Sec. 69a ff. UrhG).
+ * It is not allowed to make any kinds of modifications, nor must it be copied,
+ * or published without explicit permission. Misuse will lead to persecution.
+ *
+ * @copyright  2021 infomax websolutions GmbH
+ * @link       http://www.infomax-it.de
+ */
 
+namespace de\imxnet\neos\imxplatform\import;
+
+use de\imxnet\foundation\httpclient\iPagedHttpClient;
+use de\imxnet\foundation\httpclient\response\pagedResponse\iPagedResponse;
+use de\imxnet\imxplatformphp\arrayAccess\ArrayAccess;
+use de\imxnet\integration\imxplatform\httpclient\parameter\FindCompactEvents;
+use Neos\ContentRepository\Domain\Model\NodeInterface;
+use Neos\ContentRepository\Domain\Model\NodeTemplate;
+use Neos\ContentRepository\Domain\Service\Context;
+use Neos\ContentRepository\Domain\Service\ContextFactoryInterface;
+use Neos\ContentRepository\Domain\Service\NodeTypeManager;
+use Neos\Eel\FlowQuery\FlowQuery;
+use Neos\Neos\Utility\NodeUriPathSegmentGenerator;
+use Psr\Http\Message\ResponseInterface;
 
 final class Import {
 
@@ -32,7 +56,7 @@ final class Import {
 
   public function import() {
     //@todo do we want to support different node types for different request/parser combinations?
-    $nodeTypeName = 'imx.klosterseeon:Document.PlatformContent';
+    $nodeTypeName = 'Imx.ImxPlatformImport:Document.PlatformContent';
 
     $nodeTemplate = new NodeTemplate();
     $nodeTemplate->setNodeType($this->nodeTypeManager->getNodeType($nodeTypeName));

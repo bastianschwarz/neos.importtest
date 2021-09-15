@@ -1,0 +1,17 @@
+de\imxnet\neos\imxplatform\import\Import:
+  scope: singleton
+  arguments:
+    1:
+      object: 'ImxImxPlatformImport:ClientFactory'
+
+de\imxnet\imxplatformphp\arrayAccess\ArrayAccess:
+  scope: singleton
+
+'ImxImxPlatformImport:ClientFactory':
+  className: de\imxnet\foundation\httpclient\iPagedHttpClient
+  scope: singleton
+  factoryObjectName: de\imxnet\neos\imxplatform\import\ClientFactory
+  factoryMethodName: build
+  arguments:
+    1:
+      setting: 'Imx.PlatformImport.httpClientFactory.buildParameters'

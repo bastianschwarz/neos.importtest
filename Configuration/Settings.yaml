@@ -1,0 +1,8 @@
+Imx:
+  PlatformImport:
+    httpClientFactory:
+      buildParameters:
+        baseUri: ''
+        basicAuth:
+          user: ''
+          password: ''
